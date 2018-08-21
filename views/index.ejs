@@ -1,0 +1,26 @@
+<% include _header %>
+    <br>
+    <h1> Escuela para Porteros</h1>
+
+    <h2> Para mayor informacion: Raul Herrera Gallardo 618 163 00 98 </h2>
+    <div class="list-group"></div>
+    <a class="list-group-item list-group-item-primary">
+    Porteros
+</a>
+
+    <% usuarios.forEach((usuarios)=> {%>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a href="/usuarios/<%= usuarios.username %>" class="list-group-item list-group-item-action">
+                    <%= usuarios.name() %>
+                </a>
+            </div>
+            <% if (usuarios.bio) { %>
+                <div class="panel-body">
+                    <%= usuarios.bio %>
+                </div>
+                <% } %>
+        </div>
+        <% }) %>
+
+            <% include _footer %>
